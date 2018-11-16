@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">WF Banner</string>
+    <string name="create_banner">Criar Banner</string>
+    <string name="wf_world">WF World</string>
+    <string name="flappy_doge">Flappy Doge</string>
+    <string name="hint_name_and_cla">Insira seu nome e clã</string>
+    <string name="name">Nome</string>
+    <string name="cla">Clã</string>
+    <string name="next">Próximo</string>
+    <string name="save_name_and_cla">Salvar nome e clã para usar nas próximas vezes</string>
+    <string name="level_rank">Patente</string>
+    <string name="marca">Marca</string>
+    <string name="insignia">Insígnia</string>
+    <string name="fita">Fita</string>
 </resources>
