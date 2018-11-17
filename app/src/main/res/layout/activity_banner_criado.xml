@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cst_Banner_Criado"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".Telas.Banner_Criado">
+
+    <FrameLayout
+        android:id="@+id/frame_Banner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/img_Banner"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:contentDescription="@string/app_name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/back_19" />
+
+        <ImageView
+            android:id="@+id/img_Fita"
+            android:layout_width="300dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="100dp"
+            android:contentDescription="@string/app_name"
+            app:srcCompat="@drawable/m16" />
+
+        <ImageView
+            android:id="@+id/img_Insignia"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="123dp"
+            android:contentDescription="@string/app_name"
+            app:srcCompat="@drawable/insignia_fostech" />
+
+        <ImageView
+            android:id="@+id/img_Marca"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="123dp"
+            android:contentDescription="@string/app_name"
+            app:srcCompat="@drawable/marca_17" />
+
+        <ImageView
+            android:id="@+id/img_Patente"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="57dp"
+            android:layout_marginTop="135dp"
+            android:contentDescription="@string/app_name"
+            app:srcCompat="@drawable/rank90" />
+
+        <TextView
+            android:id="@+id/txt_Cla"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="133dp"
+            android:text="@string/cla"
+            android:textColor="@color/colorCla" />
+
+        <TextView
+            android:id="@+id/txt_Nome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="147dp"
+            android:text="@string/pref_Nome"
+            android:textColor="@color/colorNome" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/lbl_Banner_Criado"
+        android:layout_width="217dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:maxLines="5"
+        android:text="@string/hint_banner_created"
+        android:textAlignment="center"
+        android:textColor="@color/colorText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_Salvar"
+        android:layout_width="217dp"
+        android:layout_height="@dimen/btn_height"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/bg_button"
+        android:text="@string/save"
+        android:textColor="@color/colorText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_Banner_Criado" />
+
+</android.support.constraint.ConstraintLayout>

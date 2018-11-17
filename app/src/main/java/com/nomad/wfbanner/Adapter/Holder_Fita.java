@@ -18,7 +18,7 @@ public class Holder_Fita extends RecyclerView.ViewHolder {
 
         mNome = itemView.findViewById(R.id.txt_Nome_Fita);
         mDescricao = itemView.findViewById(R.id.txt_Descricao_Fita);
-        mImagem = itemView.findViewById(R.id.txt_Descricao_Fita);
+        mImagem = itemView.findViewById(R.id.img_Fita);
 
     }
 }

@@ -25,11 +25,11 @@ public class MainActivity extends AppCompatActivity {
             Intent i = new Intent(this, Nome_E_Cla.class);
             startActivity(i);
         });
-        btn_Flappy_Doge.setOnClickListener(v ->{
+        btn_Flappy_Doge.setOnClickListener(v -> {
             Uri uri = Uri.parse("https://play.google.com/store/apps/details?id=com.nomad.flappydoge");
             Intent intent = new Intent(Intent.ACTION_VIEW, uri);
             startActivity(intent);
-        }) ;
+        });
         btn_Wf_World.setOnClickListener(v -> {
             Uri uri = Uri.parse("https://play.google.com/store/apps/details?id=wfworld.com.warfaceworld");
             Intent intent = new Intent(Intent.ACTION_VIEW, uri);

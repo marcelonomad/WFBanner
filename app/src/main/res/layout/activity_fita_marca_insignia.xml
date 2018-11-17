@@ -62,7 +62,7 @@
 
         <ImageView
             android:id="@+id/img_fita"
-            android:layout_width="wrap_content"
+            android:layout_width="280dp"
             android:layout_height="95dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="92dp"
@@ -71,28 +71,74 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btn_Marca"
-            app:srcCompat="@drawable/footer" />
+            app:srcCompat="@drawable/m16" />
+
+        <ImageView
+            android:id="@+id/img_Insignia"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="24dp"
+            android:contentDescription="@string/app_name"
+            app:layout_constraintStart_toStartOf="@+id/img_Marca"
+            app:layout_constraintTop_toTopOf="@+id/img_fita"
+            app:srcCompat="@drawable/insignia_fostech" />
 
         <ImageView
             android:id="@+id/img_Marca"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:layout_height="50dp"
             android:layout_marginTop="24dp"
+            android:contentDescription="@string/app_name"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/img_fita"
-            app:srcCompat="@drawable/logo" />
+            app:srcCompat="@drawable/marca_17" />
 
         <TextView
             android:id="@+id/txt_Cla"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="45dp"
-            android:layout_marginTop="24dp"
-            android:text="TextView"
-            android:textColor="@color/colorText"
-            app:layout_constraintStart_toEndOf="@+id/img_Marca"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:text="@string/app_name"
+            android:textColor="@color/colorCla"
+            app:layout_constraintStart_toEndOf="@+id/img_Patente"
             app:layout_constraintTop_toTopOf="@+id/img_fita" />
+
+        <ImageView
+            android:id="@+id/img_Patente"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="35dp"
+            android:contentDescription="@string/app_name"
+            app:layout_constraintStart_toEndOf="@+id/img_Insignia"
+            app:layout_constraintTop_toTopOf="@+id/img_fita"
+            app:srcCompat="@drawable/rank90" />
+
+        <TextView
+            android:id="@+id/txt_Nome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/app_name"
+            android:textColor="@color/colorNome"
+            app:layout_constraintStart_toEndOf="@+id/img_Patente"
+            app:layout_constraintTop_toBottomOf="@+id/txt_Cla" />
+
+        <Button
+            android:id="@+id/btn_Proximo"
+            android:layout_width="240dp"
+            android:layout_height="@dimen/btn_height"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/bg_button"
+            android:text="@string/next"
+            android:textColor="@color/colorText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_fita" />
+
+
     </android.support.constraint.ConstraintLayout>
 
     <android.support.v7.widget.RecyclerView

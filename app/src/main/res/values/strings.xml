@@ -1,4 +1,15 @@
 <resources>
+
+    <!--Strings das preferencias-->
+    <string name="pref_Nome">Nome</string>
+    <string name="pref_Cla">Clã</string>
+    <string name="pref_Rank">90</string>
+    <string name="pref_Insignia">https://wf.cdn.gmru.net/wiki/images/2/2d/Challenge_badge_weapon10_49.png</string>
+    <string name="pref_Marca">https://wf.cdn.gmru.net/wiki/images/8/8a/Challenge_mark_sm_stage_17.png</string>
+    <string name="pref_Fita">https://wf.cdn.gmru.net/wiki/images/5/57/Challenge_strip_weapon10_12.png</string>
+    <string name="pref_Fundo">https://i.imgur.com/BKBjpoQ.png</string>
+    <!--00000000000000000000000000000-->
+
     <string name="app_name">WF Banner</string>
     <string name="create_banner">Criar Banner</string>
     <string name="wf_world">WF World</string>
@@ -12,4 +23,7 @@
     <string name="marca">Marca</string>
     <string name="insignia">Insígnia</string>
     <string name="fita">Fita</string>
+    <string name="hint_pick_background">Escolha uma imagem de fundo</string>
+    <string name="hint_banner_created">Banner Criado! Salve no celular e compartilhe!</string>
+    <string name="save">Salvar</string>
 </resources>

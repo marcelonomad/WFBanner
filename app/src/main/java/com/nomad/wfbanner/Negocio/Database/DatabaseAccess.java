@@ -5,7 +5,9 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.nomad.wfbanner.Negocio.Background_NG;
 import com.nomad.wfbanner.Negocio.Conquista_NG;
+import com.nomad.wfbanner.Negocio.Patente_NG;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -80,6 +82,18 @@ public class DatabaseAccess {
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
             list.add(new Patente_NG(cursor.getString(0), cursor.getString(1), cursor.getString(2)));
+            cursor.moveToNext();
+        }
+        cursor.close();
+        return list;
+    }
+
+    public List<Background_NG> Pesquisar_Fundos() {
+        List<Background_NG> list = new ArrayList<>();
+        Cursor cursor = database.rawQuery("SELECT Nome, URL from Background", null);
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()) {
+            list.add(new Background_NG(cursor.getString(0), cursor.getString(1)));
             cursor.moveToNext();
         }
         cursor.close();
