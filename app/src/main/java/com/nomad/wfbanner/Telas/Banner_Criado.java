@@ -61,6 +61,17 @@ public class Banner_Criado extends AppCompatActivity {
         String insignia = pref_Insignia.getString("pref_Insignia", "");
         String fundo = pref_Fundo.getString("pref_Fundo", "");
 
+
+        if (marca.length() <= 0)
+            marca = "https://wf.cdn.gmru.net/wiki/images/8/8a/Challenge_mark_sm_stage_17.png";
+        if (fita.length() <= 0)
+            fita = "https://wf.cdn.gmru.net/wiki/images/5/57/Challenge_strip_weapon10_12.png";
+        if (insignia.length() <= 0)
+            insignia = "https://wf.cdn.gmru.net/wiki/images/2/2d/Challenge_badge_weapon10_49.png";
+        if (fundo.length() <= 0)
+            fundo = "https://i.imgur.com/BKBjpoQ.png";
+
+
         txt_Cla.setText(cla);
         txt_Nome.setText(nome);
         Picasso.get()

@@ -36,7 +36,7 @@ public class Fita_Marca_Insignia extends AppCompatActivity implements IConquista
     Button btn_Marca, btn_Insignia, btn_Fita, btn_Proximo;
     ImageView img_Marca, img_Fita, img_Insignia, img_Patente;
     TextView txt_Cla, txt_Nome;
-    String Fita, Marca, Insignia;
+    String Fita = null, Marca = null, Insignia = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,20 +92,26 @@ public class Fita_Marca_Insignia extends AppCompatActivity implements IConquista
         });
 
         btn_Proximo.setOnClickListener(v -> {
-            if (Marca != null || Marca.length() <= 0) {
-                SharedPreferences.Editor editor = getSharedPreferences("pref_Marca", MODE_PRIVATE).edit();
-                editor.putString("pref_Marca", Marca);
-                editor.apply();
+            if (Marca != null) {
+                if (Marca.length() > 0) {
+                    SharedPreferences.Editor editor = getSharedPreferences("pref_Marca", MODE_PRIVATE).edit();
+                    editor.putString("pref_Marca", Marca);
+                    editor.apply();
+                }
             }
-            if (Fita != null || Fita.length() <= 0) {
-                SharedPreferences.Editor editor = getSharedPreferences("pref_Fita", MODE_PRIVATE).edit();
-                editor.putString("pref_Fita", Fita);
-                editor.apply();
+            if (Fita != null) {
+                if (Fita.length() > 0) {
+                    SharedPreferences.Editor editor = getSharedPreferences("pref_Fita", MODE_PRIVATE).edit();
+                    editor.putString("pref_Fita", Fita);
+                    editor.apply();
+                }
             }
-            if (Insignia != null || Insignia.length() <= 0) {
-                SharedPreferences.Editor editor = getSharedPreferences("pref_Insignia", MODE_PRIVATE).edit();
-                editor.putString("pref_Insignia", Insignia);
-                editor.apply();
+            if (Insignia != null) {
+                if (Insignia.length() > 0) {
+                    SharedPreferences.Editor editor = getSharedPreferences("pref_Insignia", MODE_PRIVATE).edit();
+                    editor.putString("pref_Insignia", Insignia);
+                    editor.apply();
+                }
             }
             Intent i = new Intent(Fita_Marca_Insignia.this, Escolher_Fundo.class);
             startActivity(i);
