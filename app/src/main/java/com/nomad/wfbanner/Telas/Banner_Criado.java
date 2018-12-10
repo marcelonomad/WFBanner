@@ -1,13 +1,16 @@
 package com.nomad.wfbanner.Telas;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.net.Uri;
+import android.os.Bundle;
 import android.os.Environment;
 import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -17,12 +20,13 @@ import com.nomad.wfbanner.R;
 import com.squareup.picasso.Picasso;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public class Banner_Criado extends AppCompatActivity {
-
+    final static int REQUEST_DIRECTORY = 0;
     ImageView img_Marca, img_Fita, img_Insignia, img_Patente, img_Fundo;
     TextView txt_Nome, txt_Cla;
     Button btn_Salvar;
@@ -75,9 +79,6 @@ public class Banner_Criado extends AppCompatActivity {
         txt_Cla.setText(cla);
         txt_Nome.setText(nome);
         Picasso.get()
-                .load(patente)
-                .into(img_Patente);
-        Picasso.get()
                 .load(marca)
                 .into(img_Marca);
         Picasso.get()
@@ -100,14 +101,25 @@ public class Banner_Criado extends AppCompatActivity {
             frameLayout.draw(canvas);
 
             try {
-                FileOutputStream output = new FileOutputStream(Environment.getExternalStoragePublicDirectory
-                        (Environment.DIRECTORY_DCIM) + File.separator + nome.toLowerCase() + ".png");
+                @SuppressLint("SimpleDateFormat")
+                String timeStamp = new SimpleDateFormat("ddMMyyyy_HHmm").format(Calendar.getInstance().getTime());
+                String filePath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM) + File.separator + nome.toLowerCase() + timeStamp + ".png";
+
+                FileOutputStream output = new FileOutputStream(filePath);
                 bitmap.compress(Bitmap.CompressFormat.PNG, 100, output);
                 output.close();
-                Snackbar snackbar = Snackbar.make(cst, "Banner salvo na galeria!", Snackbar.LENGTH_LONG);
-                snackbar.show();
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
+                final Snackbar[] snackbar = {Snackbar.make(cst, "Banner salvo na galeria!", Snackbar.LENGTH_INDEFINITE)};
+                snackbar[0].setAction("Abrir", view -> {
+                    Uri selectedUri = Uri.parse(filePath);
+                    Intent intent = new Intent(Intent.ACTION_VIEW);
+                    intent.setDataAndType(selectedUri, "image/*");
+                    if (intent.resolveActivityInfo(getPackageManager(), 0) != null)
+                        startActivity(intent);
+                    else {
+                        snackbar[0] = Snackbar.make(cst, "Não foi possível abrir o local do arquivo", Snackbar.LENGTH_LONG);
+                    }
+                });
+                snackbar[0].show();
             } catch (IOException e) {
                 e.printStackTrace();
             }
