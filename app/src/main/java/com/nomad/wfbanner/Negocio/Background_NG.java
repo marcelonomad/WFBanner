@@ -1,4 +1,4 @@
-package com.nomad.wfbanner.Negocio;
+package com.nomad.wfbanner.negocio;
 
 public class Background_NG {
     private String Nome, URL;

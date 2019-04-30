@@ -1,17 +1,16 @@
-package com.nomad.wfbanner.Telas;
+package com.nomad.wfbanner.telas;
 
 import android.Manifest;
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
+import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.widget.Button;
 
 import com.nomad.wfbanner.R;
@@ -47,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-
         if (ContextCompat.checkSelfPermission(MainActivity.this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             AlertDialog.Builder builder;
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -57,12 +55,10 @@ public class MainActivity extends AppCompatActivity {
             }
             builder.setTitle("Permissões")
                     .setMessage("Dê permissão para o aplicativo funcionar corretamente!")
-                    .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int which) {
-                            RxPermissions rxPermissions = new RxPermissions(MainActivity.this);
-                            rxPermissions.request(Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                                    .subscribe();
-                        }
+                    .setPositiveButton(android.R.string.ok, (dialog, which) -> {
+                        RxPermissions rxPermissions = new RxPermissions(MainActivity.this);
+                        rxPermissions.request(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                                .subscribe();
                     })
                     .setNegativeButton(android.R.string.no, (dialog, which) -> {
                         Snackbar snackbar = Snackbar.make(cst_Main, "Permissões não concedidas. O aplicativo não funcionará.", Snackbar.LENGTH_LONG);
@@ -71,10 +67,6 @@ public class MainActivity extends AppCompatActivity {
                     .setIcon(android.R.drawable.ic_dialog_alert)
                     .show();
 
-
         }
-
-
     }
-
 }

@@ -1,4 +1,4 @@
-package com.nomad.wfbanner.Telas;
+package com.nomad.wfbanner.telas;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -8,9 +8,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
-import com.nomad.wfbanner.Adapter.Adapter_Patente;
-import com.nomad.wfbanner.Negocio.Database.DatabaseAccess;
-import com.nomad.wfbanner.Negocio.Patente_NG;
+import com.nomad.wfbanner.adapter.Adapter_Patente;
+import com.nomad.wfbanner.negocio.Database.DatabaseAccess;
+import com.nomad.wfbanner.negocio.Patente_NG;
 import com.nomad.wfbanner.R;
 
 import java.util.List;

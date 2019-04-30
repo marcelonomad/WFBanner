@@ -1,6 +1,5 @@
-package com.nomad.wfbanner.Adapter;
+package com.nomad.wfbanner.adapter;
 
-import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,7 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.nomad.wfbanner.Negocio.Patente_NG;
+import com.nomad.wfbanner.negocio.Patente_NG;
 import com.nomad.wfbanner.R;
 import com.squareup.picasso.Picasso;
 

@@ -1,7 +1,6 @@
-package com.nomad.wfbanner.Negocio.Database;
+package com.nomad.wfbanner.negocio.Database;
 
 import android.content.Context;
-import android.database.sqlite.SQLiteDatabase;
 
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
 

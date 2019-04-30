@@ -1,4 +1,4 @@
-package com.nomad.wfbanner.Negocio;
+package com.nomad.wfbanner.negocio;
 
 public class Conquista_NG {
     private String Nome, Descricao, Imagem;

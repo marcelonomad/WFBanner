@@ -1,4 +1,4 @@
-package com.nomad.wfbanner.Adapter;
+package com.nomad.wfbanner.adapter;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -9,9 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.nomad.wfbanner.Negocio.Background_NG;
+import com.nomad.wfbanner.negocio.Background_NG;
 import com.nomad.wfbanner.R;
-import com.nomad.wfbanner.Telas.Banner_Criado;
+import com.nomad.wfbanner.telas.Banner_Criado;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;

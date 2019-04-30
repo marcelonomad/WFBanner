@@ -1,6 +1,6 @@
-package com.nomad.wfbanner.Interface;
+package com.nomad.wfbanner.interfaces;
 
-import com.nomad.wfbanner.Negocio.Conquista_NG;
+import com.nomad.wfbanner.negocio.Conquista_NG;
 
 import java.util.List;
 

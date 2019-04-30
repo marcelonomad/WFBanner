@@ -1,4 +1,4 @@
-package com.nomad.wfbanner.Telas;
+package com.nomad.wfbanner.telas;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -13,14 +13,14 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.nomad.wfbanner.Adapter.Adapter_Fita;
-import com.nomad.wfbanner.Adapter.Adapter_Marca_Insignia;
-import com.nomad.wfbanner.Interface.IConquista_Result;
-import com.nomad.wfbanner.Interface.IFita_Selected;
-import com.nomad.wfbanner.Interface.IInsignia_Selected;
-import com.nomad.wfbanner.Interface.IMarca_Selected;
-import com.nomad.wfbanner.Negocio.Conquista_NG;
-import com.nomad.wfbanner.Negocio.Database.DatabaseAccess;
+import com.nomad.wfbanner.adapter.Adapter_Fita;
+import com.nomad.wfbanner.adapter.Adapter_Marca_Insignia;
+import com.nomad.wfbanner.interfaces.IConquista_Result;
+import com.nomad.wfbanner.interfaces.IFita_Selected;
+import com.nomad.wfbanner.interfaces.IInsignia_Selected;
+import com.nomad.wfbanner.interfaces.IMarca_Selected;
+import com.nomad.wfbanner.negocio.Conquista_NG;
+import com.nomad.wfbanner.negocio.Database.DatabaseAccess;
 import com.nomad.wfbanner.R;
 import com.squareup.picasso.Picasso;
 

@@ -1,13 +1,13 @@
-package com.nomad.wfbanner.Negocio.Database;
+package com.nomad.wfbanner.negocio.Database;
 
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.nomad.wfbanner.Negocio.Background_NG;
-import com.nomad.wfbanner.Negocio.Conquista_NG;
-import com.nomad.wfbanner.Negocio.Patente_NG;
+import com.nomad.wfbanner.negocio.Background_NG;
+import com.nomad.wfbanner.negocio.Conquista_NG;
+import com.nomad.wfbanner.negocio.Patente_NG;
 
 import java.util.ArrayList;
 import java.util.List;

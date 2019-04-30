@@ -1,20 +1,17 @@
-package com.nomad.wfbanner.Telas;
+package com.nomad.wfbanner.telas;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 
-import com.nomad.wfbanner.Adapter.Adapter_Background;
-import com.nomad.wfbanner.Interface.IConquista_Result;
-import com.nomad.wfbanner.Interface.IFundos_Result;
-import com.nomad.wfbanner.Negocio.Background_NG;
-import com.nomad.wfbanner.Negocio.Conquista_NG;
-import com.nomad.wfbanner.Negocio.Database.DatabaseAccess;
+import com.nomad.wfbanner.adapter.Adapter_Background;
+import com.nomad.wfbanner.interfaces.IFundos_Result;
+import com.nomad.wfbanner.negocio.Background_NG;
+import com.nomad.wfbanner.negocio.Database.DatabaseAccess;
 import com.nomad.wfbanner.R;
 
 import java.util.ArrayList;

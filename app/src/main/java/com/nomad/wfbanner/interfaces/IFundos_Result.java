@@ -1,6 +1,6 @@
-package com.nomad.wfbanner.Interface;
+package com.nomad.wfbanner.interfaces;
 
-import com.nomad.wfbanner.Negocio.Background_NG;
+import com.nomad.wfbanner.negocio.Background_NG;
 
 import java.util.List;
 

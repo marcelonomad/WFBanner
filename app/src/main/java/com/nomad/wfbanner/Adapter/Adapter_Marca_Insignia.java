@@ -1,4 +1,4 @@
-package com.nomad.wfbanner.Adapter;
+package com.nomad.wfbanner.adapter;
 
 import android.app.Activity;
 import android.support.annotation.NonNull;
@@ -7,10 +7,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.nomad.wfbanner.Interface.IFita_Selected;
-import com.nomad.wfbanner.Interface.IInsignia_Selected;
-import com.nomad.wfbanner.Interface.IMarca_Selected;
-import com.nomad.wfbanner.Negocio.Conquista_NG;
+import com.nomad.wfbanner.interfaces.IFita_Selected;
+import com.nomad.wfbanner.interfaces.IInsignia_Selected;
+import com.nomad.wfbanner.interfaces.IMarca_Selected;
+import com.nomad.wfbanner.negocio.Conquista_NG;
 import com.nomad.wfbanner.R;
 import com.squareup.picasso.Picasso;
 

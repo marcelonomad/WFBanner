@@ -1,4 +1,4 @@
-package com.nomad.wfbanner.Telas;
+package com.nomad.wfbanner.telas;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -10,12 +10,15 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.Snackbar;
+import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.nomad.wfbanner.BuildConfig;
 import com.nomad.wfbanner.R;
 import com.squareup.picasso.Picasso;
 
@@ -32,6 +35,7 @@ public class Banner_Criado extends AppCompatActivity {
     Button btn_Salvar;
     FrameLayout frameLayout;
     ConstraintLayout cst;
+    Snackbar snackbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,7 +98,6 @@ public class Banner_Criado extends AppCompatActivity {
                 .load(fundo)
                 .into(img_Fundo);
 
-
         btn_Salvar.setOnClickListener(v -> {
             Bitmap bitmap = Bitmap.createBitmap(frameLayout.getWidth(), frameLayout.getHeight(), Bitmap.Config.ARGB_8888);
             Canvas canvas = new Canvas(bitmap);
@@ -108,18 +111,27 @@ public class Banner_Criado extends AppCompatActivity {
                 FileOutputStream output = new FileOutputStream(filePath);
                 bitmap.compress(Bitmap.CompressFormat.PNG, 100, output);
                 output.close();
-                final Snackbar[] snackbar = {Snackbar.make(cst, "Banner salvo na galeria!", Snackbar.LENGTH_INDEFINITE)};
-                snackbar[0].setAction("Abrir", view -> {
-                    Uri selectedUri = Uri.parse(filePath);
+                File file = new File(filePath);
+                snackbar = Snackbar.make(cst, "Banner salvo na galeria!", Snackbar.LENGTH_INDEFINITE);
+                snackbar.setAction("Abrir", view -> {
+
+                    Uri path = FileProvider.getUriForFile(Banner_Criado.this, BuildConfig.APPLICATION_ID + ".provider", file);
                     Intent intent = new Intent(Intent.ACTION_VIEW);
-                    intent.setDataAndType(selectedUri, "image/*");
+                    intent.setDataAndType(path, "image/*");
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
                     if (intent.resolveActivityInfo(getPackageManager(), 0) != null)
                         startActivity(intent);
                     else {
-                        snackbar[0] = Snackbar.make(cst, "Não foi possível abrir o local do arquivo", Snackbar.LENGTH_LONG);
+                        snackbar = Snackbar.make(cst, "Não foi possível abrir o arquivo. Verifique se existe um aplicativo visualizador de imagens no dispositivo",
+                                Snackbar.LENGTH_LONG);
+                        View snackbarView = snackbar.getView();
+                        TextView textView = snackbarView.findViewById(android.support.design.R.id.snackbar_text);
+                        textView.setMaxLines(5);
+                        snackbar.show();
                     }
                 });
-                snackbar[0].show();
+                snackbar.show();
             } catch (IOException e) {
                 e.printStackTrace();
             }
